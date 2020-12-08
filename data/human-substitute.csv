@@ -1,0 +1,17 @@
+test_subject,type,dimensions_WH,hs1,hs2,hs3,h4,material,sentient,depth
+pillow_1,head,15x20,20,23,29,35,wood,TRUE,x10
+pillow_2,head,15x20,10,10,12,15,wood,TRUE,x10
+pillow_3,head,15x20,70,54,87,98,wood,FALSE,x10
+pillow_4,head,20x28,12,12,32,54,iron,TRUE,x12
+pillow_5,head,20x29,13,15,21,85,stone,TRUE,x12
+pillow_6,head,20x30,40,50,65,68,stone,FALSE,x12
+pillow_7,body,17x40,15,26,92,0,stone,TRUE,x15
+pillow_8,body,17x40,35,46,89,92,aluminium,TRUE,x15
+pillow_9,body,17x50,84,84,85,86,aluminium,FALSE,x15
+pillow_10,body,17x50,36,45,78,91,aluminium,TRUE,x15
+backpack,NA,20x30,67,76,53,45,brick,FALSE,x20
+blanket_1,quilt,50x60,7,2,58,99,cement,TRUE,x5
+blanket_2,quilt,50x60,86,71,61,11,cement,FALSE,x5
+blanket_3,quilt,50x60,3,4,77,53,cement,TRUE,x10
+blanket_4,devet,60x70,12,41,36,50,glass,FALSE,x10
+blanket_5,duvet,60x70,10,40,50,60,glass,TRUE,x10
