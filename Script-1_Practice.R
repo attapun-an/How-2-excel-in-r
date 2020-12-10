@@ -1,6 +1,10 @@
 # PRACTICE SCRIPT 
 # written by attapun-an
 
+# INSTRUCTIONS
+# run all the code before the excercise section)
+# if you get stuck refer to the cheat sheet or check out the exmaples below
+
 # Install tidyr and dplyr (you only have to do this once)
 install.packages('dplyr')                                                       # you can delete these lines afterwards
 install.packages('tidyr')
@@ -23,7 +27,9 @@ HS_data <- read.csv('data/human-substitute.csv')
 HS_data
 str(HS_data)
 
-# Excercise ----
+# Make sure all these  
+
+# EXCERISE ----
 
 # All exercises use the HS_data 
 
@@ -55,7 +61,17 @@ Usr_nonMat <- ____
 # view the Data
 HS_data
 
+# PARSE NUMBER
+parse_number("x15")
+
+parse_number("23,34")
+
 # SEPARATE
+temp <- select(HS_data, c(dimensions_WH)) # create new object with only the dimensions column
+separate()
+
+# PASTE
+
 
 # separate dimensions_WH, "x" is the separator
 separate(HS_data, dimensions_WH, into = c("width", "height"),sep = "x")
@@ -74,11 +90,11 @@ HS_data$height <- as.numeric(HS_data$width)
 filter(HS_data, material == 'iron')
 
 # filter for rows where the material is 'iron' or 'aluminum'
-HS_metal <- filter(HS_data, material == 'iron' | material == 'aluminium')  
+filter(HS_data, material == 'iron' | material == 'aluminium')  
 HS_metal
 
 # filter rows where the material is equal to anything in this list 
-HS_metal_1 <- filter(HS_data, material %in% c('iron', 'aluminium'))
+filter(HS_data, material %in% c('iron', 'aluminium'))
 
 # both of them are the same
 identical(HS_metal, HS_metal_1)
@@ -86,23 +102,23 @@ identical(HS_metal, HS_metal_1)
 
 # SELECT
 
-# select 
-HS_only_type_and_hs1 <- select(HS_data, c(type, hs1))
-HS_only_type_and_hs1
+# select only the columns type and hs1
+select(HS_data, c(type, hs1))
 
-HS_not_type_hs1
+# select everything but those columns
 select(HS_data, -c(type, hs1))
 
 
 # MUTATE
 
-HS_data_2 <- mutate(HS_data, dimensions_WHD = paste(dimensions_WH, depth, sep = ""))
-HS_data_2
+mutate(HS_data, hs_average = (hs1+hs2+hs3+h4)/4)
 
-HS_data_2_1 <- mutate(HS_data, hs_average = (hs1+hs2+hs3+h4)/4)
-HS_data_2_1
+mutate(HS_data, dimensions_WHD = paste(dimensions_WH, depth, sep = ""))
+
 # mutate can be used with case_when for more advanced stuff
 
 # RENAME
-HS_data_renamed <- rename(HS_data, hs4 = h4, alive = sentient)
-HS_data_renamed
+rename(HS_data, hs4 = h4, alive = sentient)
+
+
+# note: you can use relocate to relocate things
