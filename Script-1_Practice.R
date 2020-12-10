@@ -17,7 +17,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))                     
 # Load the data 
 HS_data <- read.csv('data/human-substitute.csv')
 
-mutate(HS_data, h4 = paste("'", h4, "'", sep = ""))
+HS_data$h4 <- as.character(HS_data$h4)
 write.csv(x = HS_data,file = 'data/human-substitute_2.csv')
 
 # head(HS_data) tail(HS_data) are normally used but we don't have that many rows
