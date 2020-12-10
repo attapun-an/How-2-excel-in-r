@@ -17,6 +17,8 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))                     
 # Load the data 
 HS_data <- read.csv('data/human-substitute.csv')
 
+mutate(HS_data, h4 = paste("'", h4, "'", sep = ""))
+write.csv(x = HS_data,file = 'data/human-substitute_2.csv')
 
 # head(HS_data) tail(HS_data) are normally used but we don't have that many rows
 HS_data
@@ -43,7 +45,7 @@ Usr_td <- select(HS_data, ____)
 Usr_nonMat <- ____
 
 
-
+# Create a new column 
 
 
 
@@ -54,6 +56,19 @@ Usr_nonMat <- ____
 
 # view the Data
 HS_data
+
+# SEPARATE
+
+# separate dimensions_WH, "x" is the separator
+separate(HS_data, dimensions_WH, into = c("width", "height"),sep = "x")
+
+str(HS_data)
+
+HS_data$width <- as.numeric(HS_data$width)
+HS_data$height <- as.numeric(HS_data$width)
+
+
+# PASTE 
 
 # FILTER
 
@@ -81,15 +96,15 @@ HS_not_type_hs1
 select(HS_data, -c(type, hs1))
 
 
-# SEPARATE
+# MUTATE
 
-# separate dimensions_WH, "x" is the separator
-separate(HS_data, dimensions_WH, into = c("width", "height"),sep = "x")
+HS_data_2 <- mutate(HS_data, dimensions_WHD = paste(dimensions_WH, depth, sep = ""))
+HS_data_2
 
-str(HS_data)
+HS_data_2_1 <- mutate(HS_data, hs_average = (hs1+hs2+hs3+h4)/4)
+HS_data_2_1
+# mutate can be used with case_when for more advanced stuff
 
-HS_data$width <- as.numeric(HS_data$width)
-HS_data$height <- as.numeric(HS_data$width)
-
-
-
+# RENAME
+HS_data_renamed <- rename(HS_data, hs4 = h4, alive = sentient)
+HS_data_renamed
