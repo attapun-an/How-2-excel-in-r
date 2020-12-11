@@ -1,7 +1,7 @@
 # checker script
 
 checker <- function(flag){
-  if(TRUE){
+  if(flag == TRUE){
     return("Correct")
   }
   else{

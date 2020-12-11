@@ -52,8 +52,10 @@ separate(HS_data, dimensions_WH, into = c("width", "height"), sep = "x")
 # Pillow      2
 
 Usr_sep1 <- separate(HS_data, test_subject, into = c("material", "number"), sep = "_") # put your answer into this object
-  
+identical(Usr_sep1, separate(HS_data, test_subject, into = c("type", "number"), sep = "_"))
 check_separate(Usr_sep1)
+
+# Filter ----
 
 # Example
 filter(HS_data, material == 'iron') # filter only rows that have iron as the material
