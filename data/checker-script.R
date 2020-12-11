@@ -13,12 +13,7 @@ generate_ans <- function(HS_data){
   # library(tidyr)
   # library(dplyr)
   # library(readr)
-  
-  # Task: separate test_subject into "type" and "number" (example below)
-  # Type   Number
-  # Pillow      1
-  # Pillow      2
-  Ans_sep1 <- separate(HS_data, test_subject, into = c("type", "number"), sep = "_") # put your answer into this object
+
   
   # Task 1: Filter only rows that have wood as their material
   Ans_f1 <- filter(HS_data, material == "wood")
@@ -49,7 +44,7 @@ generate_ans <- function(HS_data){
 
 check_separate <- function(Usr_sep1){
   flag_sep1 <- FALSE
-  if (identical(Usr_sep1, Ans_sep1)){
+  if (identical(Usr_sep1, separate(HS_data, test_subject, into = c("type", "number"), sep = "_"))){
     flag_sep1 <- TRUE
   }
   sep_reply <- paste("Task1:",checker(flag_sep1))

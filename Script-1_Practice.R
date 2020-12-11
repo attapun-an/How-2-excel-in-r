@@ -31,10 +31,6 @@ HS_data$test_subject <- as.character(HS_data$test_subject)
 
 # this just generates the answers so you can check if your answer is right or not
 source("data/checker-script.R")
-Ans_key <- generate_ans(HS_data)
-identical(Ans_key$Ansm1, Usr_m1)
-
-Usr_m1 <- mutate(HS_data, hs_late_average = (hs3 +h4)/2)
 
 # Make sure you run all of the code on top
 
@@ -55,9 +51,9 @@ separate(HS_data, dimensions_WH, into = c("width", "height"), sep = "x")
 # Pillow      1
 # Pillow      2
 
-Usr_sep1 <- ____ # put your answer into this object
+Usr_sep1 <- separate(HS_data, test_subject, into = c("material", "number"), sep = "_") # put your answer into this object
   
-check_separate(Usr_s1)
+check_separate(Usr_sep1)
 
 # Example
 filter(HS_data, material == 'iron') # filter only rows that have iron as the material
@@ -90,7 +86,7 @@ Usr_sel1 <- ____
 Usr_sel2 <- ____
 
 
-check_select(Usr_s1, Usr_s2)
+check_select(Usr_sel1, Usr_sel2)
 # Mutating and More ---- 
 
 # Example: parsing numbers (see what each does)
