@@ -3,7 +3,6 @@
 
 # INSTRUCTIONS
 # run all the code before the excercise section)
-# if you get stuck refer to the cheat sheet or check out the exmaples below
 
 # Install tidyr and dplyr (you only have to do this once)
 install.packages('dplyr')                                                       # you can delete these lines afterwards
@@ -27,20 +26,49 @@ HS_data <- read.csv('data/human-substitute.csv')
 HS_data
 str(HS_data)
 
+
 # Make sure all these  
 
 # EXCERISE ----
+# Instructions:
+# Fill in the blanks ____ and run the code
+# Run the checker at the end of each section to see if you got it correct
+# If stuck, check the cheat sheet, or the examples at the bottom
 
-# All exercises use the HS_data 
+# you can preview what the answer looks like if you change Usr to Ans
+# For example
+Ans_f1 
 
-# Filter the data to only include materials that are wood
-Usr_wood <- filter(HS_data, ____ )
-Usr_wood
 
-# Filter the data to only include materials that are wood and are not sentient
-Usr_deadwood <- ____
-Usr_deadwood
+# Example: parsing numbers
+parse_number("X2001")
 
+# Example: separating 
+separate(HS_data, dimensions_WH, into = c("width", "height"), sep = "x")
+# sep is the character/symbol that 
+
+# Example: pasting
+paste("Hello", "world", )
+
+# Task 
+
+
+
+# Example
+filter(HS_data, material == 'iron') # filter only rows that have iron as the material
+
+# Task 1: Filter only rows that have wood as their material
+Usr_f1 <- filter(HS_data, ____ )
+
+
+# Task 2: Filter the data to only include materials that are wood and sentience is FALSE
+Usr_f2 <- ____
+
+# Filter only rows that have brick or glass as their materials 
+Usr_f3 <- ____
+
+
+check_filter(Usr_f1, Usr_f2, Usr_f3)
 
 # Select only type and depth 
 Usr_td <- select(HS_data, ____)
