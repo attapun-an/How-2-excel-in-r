@@ -52,5 +52,24 @@ check_separate <- function(Usr_sep1){
   return(paste(sep_reply, sep = "\n"))
 }
 
-# check_filter(Usr_f1, Usr_f2, Usr_f3)
+check_filter <- function(Usr_f1, Usr_f2, Usr_f3){
+  flag_f1 <- FALSE
+  flag_f2 <- FALSE
+  flag_f3 <- FALSE
+  
+  if(identical(Usr_f1, filter(HS_data, material == "wood"))){
+    flag_f1 <- TRUE
+  }
+  if(identical(Usr_f2, filter(filter(HS_data, material == "wood" & sentient == FALSE)))){
+    flag_f2 <- TRUE
+  }
+  if(identical(Usr_f3, filter(HS_data, material %in% c("brick", "glass")))){
+    flag_f3 <- TRUE
+  }
+  f1_reply <- paste("Task1:",checker(flag_f1))
+  f2_reply <- paste("Task2:",checker(flag_f2))
+  f3_reply <- paste("Task3:",checker(flag_f3))
+  
+  return(paste(f1_reply, f2_reply, f3_reply))
+}
 
