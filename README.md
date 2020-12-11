@@ -1,5 +1,7 @@
 # How-2-excel-in-r
- How to excel in r
+attapun-an | attapunanivat@gmail.com
+
+ How to excel in r (a tutorial assignment that didn't quite go as planned)
 
 Instructions: once you download it, you can move the whole folder around but don't rearrange the files inside.
 
