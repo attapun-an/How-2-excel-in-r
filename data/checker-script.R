@@ -44,6 +44,7 @@ generate_ans <- function(HS_data){
   # (hint: use the paste() function)
   Ans_m2 <- mutate(HS_data, dimensions_WHD = paste(dimensions_WH, depth, sep = ""))
   
+  # as.list(environment())
 }
 
 check_separate <- function(Usr_sep1){

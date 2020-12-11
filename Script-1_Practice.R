@@ -31,7 +31,10 @@ HS_data$test_subject <- as.character(HS_data$test_subject)
 
 # this just generates the answers so you can check if your answer is right or not
 source("data/checker-script.R")
-generate_ans(HS_data)
+Ans_key <- generate_ans(HS_data)
+identical(Ans_key$Ansm1, Usr_m1)
+
+Usr_m1 <- mutate(HS_data, hs_late_average = (hs3 +h4)/2)
 
 # Make sure you run all of the code on top
 
@@ -41,9 +44,6 @@ generate_ans(HS_data)
 # Run the checker at the end of each section to see if you got it correct
 # If stuck, check the cheat sheet, or the examples at the bottom
 
-# you can preview what the answer looks like if you change Usr to Ans
-# For example
-Ans_f1 #this shows the answer for f1
 
 # Separating ----
 
